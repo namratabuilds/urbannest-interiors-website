@@ -1,0 +1,139 @@
+/* ==========================================================================
+   FORM COMPONENTS
+   UrbanNest Editorial / Spatial AI Interface
+   Spec sourced from webdesign.md lines 185-191, 609-623
+   ========================================================================== */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+}
+
+.form-label {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-label .label-optional {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+/* Base Form Control (webdesign.md line 185) */
+.form-control {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body-md);
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-control:focus {
+  border-color: var(--color-focus-ring);
+  box-shadow: 0 0 0 3px rgba(111, 141, 116, 0.15);
+}
+
+.form-control:disabled {
+  background-color: var(--color-surface);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Textarea modifier */
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Select Dropdown */
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2366766A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* Helper & Error text */
+.form-helper {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.form-error {
+  font-size: 0.75rem;
+  color: var(--color-error);
+}
+
+/* Toggle Switch */
+.switch-control {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-pill);
+  transition: background-color var(--transition-fast);
+}
+
+.switch-slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-pill);
+  transition: transform var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.switch-input:checked + .switch-slider {
+  background-color: var(--color-secondary);
+}
+
+.switch-input:checked + .switch-slider::before {
+  transform: translateX(20px);
+}
+
+/* Range Slider */
+.range-slider {
+  width: 100%;
+  accent-color: var(--color-secondary);
+  height: 6px;
+  background: var(--color-border);
+  border-radius: var(--radius-pill);
+  outline: none;
+}

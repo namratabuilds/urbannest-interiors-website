@@ -1,0 +1,29 @@
+/**
+ * MAIN STYLESHEET
+ * UrbanNest Editorial / Spatial AI Interface
+ * 
+ * Modular Component Architecture:
+ * - variables.css: Core Design Tokens & :root Variables
+ * - base.css: Typography, Grid, Reset & Global Layout
+ * - components/buttons.css: All button variants & states
+ * - components/cards.css: Standard, elevated, feature, prompt, pricing cards
+ * - components/navbar.css: Header & navigation
+ * - components/chat-interface.css: Complete AI chatbot interface components
+ * - components/forms.css: Form fields, toggles, sliders
+ * - components/features.css: Editorial sections & timeline
+ * - components/component-library.css: Showcase gallery
+ * - components/theme-customizer.css: Live root variable inspector
+ * - components/footer.css: Editorial site footer
+ */
+
+@import "variables.css";
+@import "base.css";
+@import "components/buttons.css";
+@import "components/cards.css";
+@import "components/navbar.css";
+@import "components/chat-interface.css";
+@import "components/forms.css";
+@import "components/features.css";
+@import "components/component-library.css";
+@import "components/theme-customizer.css";
+@import "components/footer.css";

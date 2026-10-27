@@ -1,0 +1,162 @@
+/**
+ * DESIGN SYSTEM ROOT VARIABLES
+ * UrbanNest Editorial / Spatial AI Interface
+ * Sourced directly from webdesign.md specification
+ * Modify these variables to change the entire system theme at any point.
+ */
+
+:root {
+  /* ==========================================================================
+     1. COLOR SYSTEM (Strictly following webdesign.md Section 2)
+     ========================================================================== */
+  /* Primary Canvas & Backgrounds */
+  --color-primary: #EAF6EE;
+  --color-secondary: #344C3D;
+  --color-tertiary: #A7BEAC;
+  --color-accent: #6F8D74;
+  --color-neutral: #FFFFFF;
+  --color-background: #EAF6EE;
+  --color-surface: #F5FAF6;
+  --color-surface-elevated: #FFFFFF;
+
+  /* Typography Colors */
+  --color-text-primary: #26372D;
+  --color-text-secondary: #66766A;
+  --color-text-muted: #849187;
+
+  /* Borders & Dividers */
+  --color-border: #D5E4D8;
+  --color-border-strong: #B6CDBB;
+
+  /* Button Tokens */
+  --color-button-primary: #344C3D;
+  --color-button-primary-hover: #26372D;
+  --color-button-primary-text: #FFFFFF;
+  --color-button-secondary: #FFFFFF;
+  --color-button-secondary-text: #344C3D;
+  --color-button-secondary-border: #B6CDBB;
+
+  /* Overlays & Accents */
+  --color-image-overlay: rgba(24, 39, 29, 0.18);
+  --color-focus-ring: #6F8D74;
+  --color-success: #3F7550;
+  --color-warning: #98733A;
+  --color-error: #B94D4D;
+
+  /* Chatbot Interface Dedicated Tokens */
+  --chat-window-bg: #F5FAF6;
+  --chat-sidebar-bg: #EFF7F1;
+  --chat-sidebar-border: #D5E4D8;
+  --chat-main-bg: #FFFFFF;
+  --chat-bubble-user-bg: #344C3D;
+  --chat-bubble-user-text: #FFFFFF;
+  --chat-bubble-ai-bg: #F5FAF6;
+  --chat-bubble-ai-text: #26372D;
+  --chat-bubble-ai-border: #D5E4D8;
+  --chat-input-bg: #FFFFFF;
+  --chat-input-border: #D5E4D8;
+  --chat-code-bg: #26372D;
+  --chat-code-text: #EAF6EE;
+  --chat-prompt-chip-bg: #EAF6EE;
+  --chat-prompt-chip-text: #344C3D;
+  --chat-prompt-chip-border: #D5E4D8;
+
+  /* ==========================================================================
+     2. TYPOGRAPHY SYSTEM (webdesign.md Section 3)
+     ========================================================================== */
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Consolas, "Courier New", monospace;
+
+  /* Display Font (Editorial scale) */
+  --font-size-display: clamp(2.75rem, 5.5vw, 5.75rem);
+  --line-height-display: 1.02;
+  --letter-spacing-display: -0.04em;
+  --font-weight-display: 400;
+
+  /* Heading XL */
+  --font-size-heading-xl: clamp(2.25rem, 4vw, 4.25rem);
+  --line-height-heading-xl: 1.08;
+  --letter-spacing-heading-xl: -0.035em;
+
+  /* Heading LG */
+  --font-size-heading-lg: clamp(1.75rem, 2.75vw, 2.75rem);
+  --line-height-heading-lg: 1.15;
+  --letter-spacing-heading-lg: -0.025em;
+
+  /* Heading MD */
+  --font-size-heading-md: 1.25rem;
+  --line-height-heading-md: 1.4;
+  --letter-spacing-heading-md: -0.02em;
+  --font-weight-heading-md: 500;
+
+  /* Body Typography */
+  --font-size-body-lg: 1.125rem;
+  --line-height-body-lg: 1.8;
+  --font-size-body-md: 0.9375rem;
+  --line-height-body-md: 1.75;
+  --font-size-body-sm: 0.8125rem;
+  --line-height-body-sm: 1.6;
+
+  /* Eyebrows & Navigation Labels */
+  --font-size-label-md: 0.6875rem;
+  --letter-spacing-label-md: 0.16em;
+  --font-size-nav: 0.8125rem;
+
+  /* ==========================================================================
+     3. SPACING & LAYOUT SYSTEM (webdesign.md Section 4 & 4px base scale)
+     ========================================================================== */
+  --base-unit: 4px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
+
+  /* Container & Padding */
+  --layout-content-width: 1440px;
+  --layout-wide-width: 1600px;
+  --layout-page-gutter: clamp(20px, 5vw, 80px);
+  --layout-section-padding: clamp(64px, 8.5vw, 136px);
+  --layout-section-padding-compact: clamp(40px, 5vw, 80px);
+  --layout-grid-gap: clamp(16px, 2vw, 32px);
+
+  /* Navbar Metrics */
+  --navbar-height: 88px;
+  --navbar-height-mobile: 68px;
+
+  /* ==========================================================================
+     4. BORDER RADIUS (webdesign.md rounded specs)
+     ========================================================================== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-image: 4px;
+  --radius-pill: 999px;
+
+  /* ==========================================================================
+     5. ELEVATION / SHADOWS (webdesign.md elevation specs)
+     ========================================================================== */
+  --elevation-none: none;
+  --elevation-subtle: 0 4px 24px rgba(38, 55, 45, 0.045);
+  --elevation-medium: 0 12px 40px rgba(38, 55, 45, 0.08);
+  --elevation-overlay: 0 16px 48px rgba(20, 35, 25, 0.16);
+
+  /* ==========================================================================
+     6. MOTION & TRANSITIONS (webdesign.md Section 8)
+     ========================================================================== */
+  --transition-fast: 180ms ease;
+  --transition-normal: 250ms ease;
+  --transition-smooth: 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-warp: 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}

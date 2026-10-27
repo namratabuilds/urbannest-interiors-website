@@ -1,0 +1,265 @@
+/* ==========================================================================
+   CARD COMPONENTS
+   UrbanNest Editorial / Spatial AI Interface
+   Spec sourced from webdesign.md lines 171-184, 761-770
+   ========================================================================== */
+
+/* Base Standard Card */
+.card {
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6);
+  box-shadow: var(--elevation-none);
+  position: relative;
+  transition: border-color var(--transition-fast), 
+              box-shadow var(--transition-normal), 
+              transform var(--transition-normal);
+}
+
+.card:hover {
+  border-color: var(--color-border-strong);
+}
+
+/* Elevated Card (webdesign.md elevation specs) */
+.card-elevated {
+  box-shadow: var(--elevation-subtle);
+}
+
+.card-elevated:hover {
+  box-shadow: var(--elevation-medium);
+  transform: translateY(-2px);
+}
+
+/* Interactive Card */
+.card-interactive {
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  border-color: var(--color-accent);
+}
+
+/* Image Card (webdesign.md line 178) */
+.card-image-wrapper {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-image);
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-warp);
+}
+
+.card-image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+.card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-image-overlay);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.card-image-wrapper:hover .card-image-overlay {
+  opacity: 1;
+}
+
+/* Feature Card */
+.card-feature {
+  padding: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.card-feature:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--elevation-subtle);
+  transform: translateY(-2px);
+}
+
+.card-feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-6);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.card-feature:hover .card-feature-icon {
+  background-color: var(--color-secondary);
+  color: var(--color-neutral);
+}
+
+.card-feature-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-3);
+}
+
+.card-feature-desc {
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-body-md);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-6);
+}
+
+/* Prompt Card (For AI Chatbot Interface Suggestion Grid) */
+.card-prompt {
+  padding: var(--spacing-4) var(--spacing-5);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.card-prompt:hover {
+  border-color: var(--color-accent);
+  background: var(--color-surface);
+  transform: translateY(-2px);
+  box-shadow: var(--elevation-subtle);
+}
+
+.card-prompt .prompt-title {
+  font-size: var(--font-size-body-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-prompt .prompt-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Metric / Stat Card */
+.card-metric {
+  padding: var(--spacing-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.card-metric .metric-value {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  color: var(--color-secondary);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-1);
+}
+
+.card-metric .metric-label {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Pricing Card */
+.card-pricing {
+  padding: var(--spacing-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-elevated);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.card-pricing.is-popular {
+  border-color: var(--color-secondary);
+  box-shadow: var(--elevation-subtle);
+  position: relative;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background-color: var(--color-secondary);
+  color: var(--color-neutral);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+.pricing-tier {
+  font-size: var(--font-size-label-md);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label-md);
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-2);
+}
+
+.pricing-price {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-2);
+}
+
+.pricing-price span {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.pricing-desc {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-8);
+  flex-grow: 1;
+}
+
+.pricing-feature-item {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.pricing-feature-item svg {
+  color: var(--color-success);
+  flex-shrink: 0;
+}

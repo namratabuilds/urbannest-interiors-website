@@ -1,0 +1,228 @@
+/* ==========================================================================
+   THEME & ROOT VARIABLES CUSTOMIZER WIDGET
+   Allows live dynamic modification of the entire system root variables
+   ========================================================================== */
+
+/* Floating Launch Badge */
+.system-customizer-trigger {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: 10px 18px;
+  background-color: var(--color-secondary);
+  color: var(--color-neutral);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--elevation-overlay);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.system-customizer-trigger:hover {
+  transform: translateY(-2px) scale(1.02);
+  background-color: var(--color-text-primary);
+}
+
+.system-customizer-trigger svg {
+  transition: transform var(--transition-fast);
+}
+
+.system-customizer-trigger:hover svg {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Customizer Drawer / Panel */
+.system-customizer-panel {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 400px;
+  max-width: 90vw;
+  height: 100vh;
+  background-color: var(--color-surface-elevated);
+  border-left: 1px solid var(--color-border);
+  box-shadow: var(--elevation-overlay);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transition: right var(--transition-smooth);
+}
+
+.system-customizer-panel.is-open {
+  right: 0;
+}
+
+.customizer-header {
+  padding: var(--spacing-5) var(--spacing-6);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-surface);
+}
+
+.customizer-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+}
+
+.customizer-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.customizer-close-btn:hover {
+  background-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.customizer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.customizer-section-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label-md);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Presets Grid */
+.preset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2);
+}
+
+.preset-btn {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all var(--transition-fast);
+}
+
+.preset-btn:hover {
+  border-color: var(--color-secondary);
+  background: var(--color-surface-elevated);
+}
+
+.preset-btn.active {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 2px var(--color-secondary);
+}
+
+.preset-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.preset-colors-row {
+  display: flex;
+  gap: 4px;
+}
+
+.preset-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Color Control Item */
+.color-control-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-2);
+}
+
+.color-control-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.color-var-name {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.color-var-token {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+}
+
+.color-picker-input {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: transparent;
+}
+
+/* Customizer Footer */
+.customizer-footer {
+  padding: var(--spacing-4) var(--spacing-6);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+/* Backdrop */
+.customizer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(24, 39, 29, 0.4);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.customizer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
