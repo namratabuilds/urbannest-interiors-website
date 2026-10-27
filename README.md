@@ -56,7 +56,7 @@ UrbanNest is a website project demonstrating modern frontend development, visual
 A contemporary interior design studio website featuring
 editorial minimalism and an AI-powered design assistant.
 
-**Live Demo:** [View UrbanNest](https://vercel.com/namrata-tiwari/urbannest-interiors-website-oc8m)
+**Live Demo:** [View UrbanNest](https://urbannest-interiors-website-oc8m.vercel.app/)
 
 ## License & Copyright
 
