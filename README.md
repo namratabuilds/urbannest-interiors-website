@@ -51,6 +51,13 @@ UrbanNest is a website project demonstrating modern frontend development, visual
 
 **Note:** UrbanNest is a fictional studio created for demonstration and portfolio purposes. Business contact details and pricing are illustrative.
 
+# UrbanNest Interiors & Architecture
+
+A contemporary interior design studio website featuring
+editorial minimalism and an AI-powered design assistant.
+
+**Live Demo:** [View UrbanNest](https://vercel.com/namrata-tiwari/urbannest-interiors-website-oc8m)
+
 ## License & Copyright
 
 © 2026 UrbanNest Interiors. All rights reserved unless otherwise specified.
